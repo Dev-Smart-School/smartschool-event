@@ -29,9 +29,10 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Header Mobile-->
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 			<!--begin::Logo-->
-			<a href="index.html">
-				<img alt="Logo" src="assets/media/logos/logo-light.png" />
-			</a>
+			{{-- <a href="index.html">
+				<img alt="Logo" src="/assets/media/logos/logo-light.png" />
+			</a> --}}
+			<h6>SMART-EVENT</h6>
 			<!--end::Logo-->
 			<!--begin::Toolbar-->
 			<div class="d-flex align-items-center">
@@ -48,7 +49,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				<!--begin::Topbar Mobile Toggle-->
 				<button class="btn btn-hover-text-primary p-0 ml-2" id="kt_header_mobile_topbar_toggle">
 					<span class="svg-icon svg-icon-xl">
-						<!--begin::Svg Icon | path:assets/media/svg/icons/General/User.svg-->
+						<!--begin::Svg Icon | path:/assets/media/svg/icons/General/User.svg-->
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 								<polygon points="0 0 24 0 24 24 0 24" />
@@ -72,14 +73,15 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!--begin::Brand-->
 					<div class="brand flex-column-auto" id="kt_brand">
 						<!--begin::Logo-->
-						<a href="index.html" class="brand-logo">
-							<img alt="Logo" src="assets/media/logos/logo-light.png" />
-						</a>
+						{{-- <a href="index.html" class="brand-logo">
+							<img alt="Logo" src="/assets/media/logos/logo-light.png" />
+						</a> --}}
+						<h5 class="text-white">SMART-EVENT</h5>
 						<!--end::Logo-->
 						<!--begin::Toggle-->
 						<button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
 							<span class="svg-icon svg-icon svg-icon-xl">
-								<!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Angle-double-left.svg-->
+								<!--begin::Svg Icon | path:/assets/media/svg/icons/Navigation/Angle-double-left.svg-->
 								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 										<polygon points="0 0 24 0 24 24 0 24" />
@@ -143,10 +145,22 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="topbar-item">
 									<div class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
 										<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">Sean</span>
-										<span class="symbol symbol-35 symbol-light-success">
-											<span class="symbol-label font-size-h5 font-weight-bold">S</span>
-										</span>
+										@if ($typeLogin == 'user')
+											<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ $data->nama_lengkap }}</span>
+											<span class="symbol symbol-35 symbol-light-success">
+												<span class="symbol-label font-size-h5 font-weight-bold">S</span>
+											</span>
+										@elseif ($typeLogin == 'guru')
+											<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ $data->nama_guru }}</span>
+											<span class="symbol symbol-35 symbol-light-success">
+												<span class="symbol-label font-size-h5 font-weight-bold">S</span>
+											</span>
+										@elseif ($typeLogin == 'siswa')
+											<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ $data->nama }}</span>
+											<span class="symbol symbol-35 symbol-light-success">
+												<span class="symbol-label font-size-h5 font-weight-bold">S</span>
+											</span>
+										@endif
 									</div>
 								</div>
 								<!--end::User-->
@@ -205,7 +219,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				<!--begin::Header-->
 				<div class="d-flex align-items-center mt-5">
 					<div class="symbol symbol-100 mr-5">
-						<div class="symbol-label" style="background-image:url('assets/media/users/300_21.jpg')"></div>
+						<div class="symbol-label" style="background-image:url('/assets/media/users/300_21.jpg')"></div>
 						<i class="symbol-badge bg-success"></i>
 					</div>
 					<div class="d-flex flex-column">
@@ -216,7 +230,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<span class="navi-link p-0 pb-2">
 									<span class="navi-icon mr-1">
 										<span class="svg-icon svg-icon-lg svg-icon-primary">
-											<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Mail-notification.svg-->
+											<!--begin::Svg Icon | path:/assets/media/svg/icons/Communication/Mail-notification.svg-->
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 													<rect x="0" y="0" width="24" height="24" />
@@ -246,7 +260,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="symbol symbol-40 bg-light mr-3">
 								<div class="symbol-label">
 									<span class="svg-icon svg-icon-md svg-icon-success">
-										<!--begin::Svg Icon | path:assets/media/svg/icons/General/Notification2.svg-->
+										<!--begin::Svg Icon | path:/assets/media/svg/icons/General/Notification2.svg-->
 										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 												<rect x="0" y="0" width="24" height="24" />
@@ -286,7 +300,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Scrolltop-->
 		<div id="kt_scrolltop" class="scrolltop">
 			<span class="svg-icon">
-				<!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Up-2.svg-->
+				<!--begin::Svg Icon | path:/assets/media/svg/icons/Navigation/Up-2.svg-->
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 						<polygon points="0 0 24 0 24 24 0 24" />

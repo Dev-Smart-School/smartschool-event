@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/competition', [CompetitionController::class, 'index'])->name('competition');
+Route::get('/{type}/{id}', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/competition/{type}/{id}', [CompetitionController::class, 'index'])->name('competition');
 Route::post('/competition', [CompetitionController::class, 'store'])->name('competition.store');

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\CategoryCompetition;
 use App\Models\Competition;
+use App\Models\Guru;
+use App\Models\Siswa;
+use App\Models\User;
 use DateTime;
 use Illuminate\Http\Request;
 
@@ -14,10 +17,21 @@ class CompetitionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index($type, $id){
         $category = CategoryCompetition::all();
-        return view('pages.competition.index', compact('category'));
+        if ($type == 'user') {
+            $typeLogin = 'user';
+            $data = User::where('id_user', $id)->first();
+            return view('pages.competition.index', compact(['category', 'data', 'typeLogin']));
+        } else if($type == 'guru') {
+            $typeLogin = 'guru';
+            $data = Guru::where('id_guru', $id)->first();
+            return view('pages.competition.index', compact(['category', 'data', 'typeLogin']));
+        } else if($type == 'siswa') {
+            $typeLogin = 'siswa';
+            $data = Siswa::where('id_siswa', $id)->first();
+            return view('pages.competition.index', compact(['category', 'data', 'typeLogin']));
+        } 
     }
 
     /**
