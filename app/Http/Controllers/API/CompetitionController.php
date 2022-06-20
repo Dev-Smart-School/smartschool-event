@@ -15,9 +15,9 @@ class CompetitionController extends Controller
         $data = Competition::all();
 
         if ($data) {
-            return ResponseFormatter::success($data, 'berhasil ambil data kompetensi');
+            return ResponseFormatter::success($data, 'berhasil ambil data kompetisi');
         } else {
-            return ResponseFormatter::error('Gagal ambil data kompetensi');
+            return ResponseFormatter::error('Gagal ambil data kompetisi');
         }
     }
 
@@ -34,9 +34,9 @@ class CompetitionController extends Controller
         }
 
         if ($data) {
-            return ResponseFormatter::success($data, 'berhasil submit kompetensi');
+            return ResponseFormatter::success($data, 'berhasil submit kompetisi');
         } else {
-            return ResponseFormatter::error('Gagal submit kompetensi');
+            return ResponseFormatter::error('Gagal submit kompetisi');
         }
     }
 }

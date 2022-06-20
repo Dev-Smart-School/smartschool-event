@@ -19,20 +19,12 @@ class CompetitionController extends Controller
      */
     public function index(){
         $category = CategoryCompetition::all();
-        // if ($type == 'user') {
-        //     $typeLogin = 'user';
-        //     $data = User::where('id_user', $id)->first();
-        //     return view('pages.competition.index', compact(['category', 'data', 'typeLogin']));
-        // } else if($type == 'guru') {
-        //     $typeLogin = 'guru';
-        //     $data = Guru::where('id_guru', $id)->first();
-        //     return view('pages.competition.index', compact(['category', 'data', 'typeLogin']));
-        // } else if($type == 'siswa') {
-        //     $typeLogin = 'siswa';
-        //     $data = Siswa::where('id_siswa', $id)->first();
-        //     return view('pages.competition.index', compact(['category', 'data', 'typeLogin']));
-        // } 
-        return view('pages.competition.index', compact(['category']));
+        if (session()->has('user')) {
+            $user = User::where('id_user', session('user_id'))->first();
+            return view('pages.competition.index', compact(['category', 'user']));
+        } else {
+            abort(404, 'ANDA HARUS LOGIN DULU');
+        }
     }
 
     /**

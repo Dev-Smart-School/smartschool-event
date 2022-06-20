@@ -20,3 +20,8 @@
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="/assets/js/pages/crud/forms/widgets/bootstrap-daterangepicker.js?v=7.0.5"></script>
 		<!--end::Page Scripts-->
+		<!--begin::Page Vendors(used by this page)-->
+		<script src="/assets/plugins/custom/datatables/datatables.bundle.js?v=7.0.5"></script>
+		<!--end::Page Vendors-->
+		<!--begin::Page Scripts(used by this page)-->
+		<script src="/assets/js/pages/crud/datatables/basic/basic.js?v=7.0.5"></script>

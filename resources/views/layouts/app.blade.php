@@ -149,16 +149,6 @@ License: You must have a valid license purchased only from themeforest(the above
 											<span class="symbol symbol-35 symbol-light-success">
 												<span class="symbol-label font-size-h5 font-weight-bold">S</span>
 											</span>
-										@elseif ($guru)
-											<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ $guru->nama_guru }}</span>
-											<span class="symbol symbol-35 symbol-light-success">
-												<span class="symbol-label font-size-h5 font-weight-bold">S</span>
-											</span>
-										@elseif ($siswa)
-											<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ $siswa->nama }}</span>
-											<span class="symbol symbol-35 symbol-light-success">
-												<span class="symbol-label font-size-h5 font-weight-bold">S</span>
-											</span>
 										@endif
 									</div>
 								</div>

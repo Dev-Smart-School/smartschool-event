@@ -22,15 +22,15 @@
     </div>
     <!--end::Notice-->
     <!--begin::Card-->
-    <div class="card card-custom">
-        <div class="card-header flex-wrap border-0 pt-6 pb-0">
+    <div class="card card-custom gutter-b">
+        <div class="card-header flex-wrap py-3">
             <div class="card-title">
-                <h3 class="card-label">Local Datasource
-                <span class="text-muted pt-2 font-size-sm d-block">Javascript array as data source</span></h3>
+                <h3 class="card-label">Basic Demo
+                <span class="d-block text-muted pt-2 font-size-sm">sorting &amp; pagination remote datasource</span></h3>
             </div>
             <div class="card-toolbar">
                 <!--begin::Dropdown-->
-                {{-- <div class="dropdown dropdown-inline mr-2">
+                <div class="dropdown dropdown-inline mr-2">
                     <button type="button" class="btn btn-light-primary font-weight-bolder dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="svg-icon svg-icon-md">
                         <!--begin::Svg Icon | path:assets/media/svg/icons/Design/PenAndRuller.svg-->
@@ -92,10 +92,10 @@
                         <!--end::Navigation-->
                     </div>
                     <!--end::Dropdown Menu-->
-                </div> --}}
+                </div>
                 <!--end::Dropdown-->
                 <!--begin::Button-->
-                <button type="button" class="btn btn-primary font-weight-bolder" data-toggle="modal" data-target="#exampleModal">
+                <a href="#" class="btn btn-primary font-weight-bolder">
                 <span class="svg-icon svg-icon-md">
                     <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -106,61 +106,58 @@
                         </g>
                     </svg>
                     <!--end::Svg Icon-->
-                </span>Tambah Data</a>
+                </span>New Record</a>
                 <!--end::Button-->
             </div>
         </div>
         <div class="card-body">
-            <!--begin: Search Form-->
-            <!--begin::Search Form-->
-            <div class="mb-7">
-                <div class="row align-items-center">
-                    <div class="col-lg-9 col-xl-8">
-                        <div class="row align-items-center">
-                            <div class="col-md-4 my-2 my-md-0">
-                                <div class="input-icon">
-                                    <input type="text" class="form-control" placeholder="Search..." id="kt_datatable_search_query" />
-                                    <span>
-                                        <i class="flaticon2-search-1 text-muted"></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-md-4 my-2 my-md-0">
-                                <div class="d-flex align-items-center">
-                                    <label class="mr-3 mb-0 d-none d-md-block">Status:</label>
-                                    <select class="form-control" id="kt_datatable_search_status">
-                                        <option value="">All</option>
-                                        <option value="1">Draft</option>
-                                        <option value="2">Published</option>
-                                        <option value="3">Candidate</option>
-                                        <option value="4">Winner</option>
-                                        <option value="5">Info</option>
-                                        <option value="6">Danger</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-4 my-2 my-md-0">
-                                <div class="d-flex align-items-center">
-                                    <label class="mr-3 mb-0 d-none d-md-block">Type:</label>
-                                    <select class="form-control" id="kt_datatable_search_type">
-                                        <option value="">All</option>
-                                        <option value="1">Online</option>
-                                        <option value="2">Retail</option>
-                                        <option value="3">Direct</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-xl-4 mt-5 mt-lg-0">
-                        <a href="#" class="btn btn-light-primary px-6 font-weight-bold">Search</a>
-                    </div>
-                </div>
-            </div>
-            <!--end::Search Form-->
-            <!--end: Search Form-->
             <!--begin: Datatable-->
-            <div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable"></div>
+            <table class="table table-bordered table-checkable" id="">
+                <thead>
+                    <tr>
+                        <th>Record ID</th>
+                        <th>Order ID</th>
+                        <th>Country</th>
+                        <th>Ship City</th>
+                        <th>Ship Address</th>
+                        <th>Company Agent</th>
+                        <th>Company Name</th>
+                        <th>Ship Date</th>
+                        <th>Status</th>
+                        <th>Type</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>64616-103</td>
+                        <td>Brazil</td>
+                        <td>São Félix do Xingu</td>
+                        <td>698 Oriole Pass</td>
+                        <td>Hayes Boule</td>
+                        <td>Casper-Kerluke</td>
+                        <td>10/15/2017</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td nowrap="nowrap"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>54868-3377</td>
+                        <td>Vietnam</td>
+                        <td>Bình Minh</td>
+                        <td>8998 Delaware Court</td>
+                        <td>Humbert Bresnen</td>
+                        <td>Hodkiewicz and Sons</td>
+                        <td>4/24/2016</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td nowrap="nowrap"></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
             <!--end: Datatable-->
         </div>
     </div>

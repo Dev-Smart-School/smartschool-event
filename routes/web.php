@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthUserController;
 use App\Http\Controllers\CompetitionController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [DashboardController::class, 'index'])->name('home');
-Route::get('auth/{type}/{id}', [DashboardController::class, 'logged'])->name('check-logged');
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('auth/{type}/{id}', [AuthUserController::class, 'logged'])->name('check-logged');
 Route::get('/competition', [CompetitionController::class, 'index'])->name('competition');
 Route::post('/competition', [CompetitionController::class, 'store'])->name('competition.store');
