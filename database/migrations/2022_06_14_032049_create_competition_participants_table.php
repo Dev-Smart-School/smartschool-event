@@ -17,8 +17,9 @@ class CreateCompetitionParticipantsTable extends Migration
             $table->id();
             $table->integer('competition_id');
             $table->integer('user_id');
-            $table->string('desciption');
+            $table->string('description');
             $table->string('url')->nullable();
+            $table->string('image')->nullable();
             $table->enum('status', [0, 1, 2, 3])->default(0);
             // status 0 = pending, 1 = accepted, 2 = candidate, 3 = winner
             $table->timestamps();

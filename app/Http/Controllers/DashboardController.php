@@ -30,29 +30,14 @@ class DashboardController extends Controller
     // }
 
     public function index(){
-        if(session()->has('user')){
+        // dd(session()->all());
+        if(session()->has('user') || session()->has('type')){
             $id = session('user_id');
             $type = session('type');
             return redirect()->route('check-logged', ['type'=> $type, 'id' => $id]); 
         }
         
-        return Redirect::to('https://home.sekolahandalan.id');
-    }
-
-    public function verify(Request $req){
-        $credentials = $req->validate([
-            'username' => 'required|min:3',
-            'password' => 'required'
-        ]);
-
-        if(Auth::login($credentials)){
-            $req->session()->regenerate();
-            return redirect('/');
-        }
-
-        return back()->withErrors([
-            'username' => 'The provided credentials do not match our records.',
-        ])->onlyInput('username');
+        return 'anu';
     }
 
     public function logged($type, $id){
@@ -60,7 +45,7 @@ class DashboardController extends Controller
             $user = User::where('id_user', $id)->first();
             session()->put('user', $user);
             session()->put('user_id', $id);
-            return redirect()->route('home', compact(['user', 'type']));
+            return redirect()->route('home', compact(['user']));
         }
 
         else if($type == 'siswa'){
@@ -68,15 +53,15 @@ class DashboardController extends Controller
             $user = Siswa::where('id_siswa', $id)->first();
             session()->put('user', $user->nama);
             session()->put('user_id', $id);
-            return redirect()->route('home', compact(['user', 'type']));
+            return redirect()->route('home', compact(['user']));
         } else if($type == 'guru'){
             session(['type' => $type]);
             $user = Guru::where('id_guru', $id)->first();
             session()->put('user', $user->nama);
             session()->put('user_id', $id);
-            return redirect()->route('home', compact(['user', 'type']));
+            return redirect()->route('home', compact(['user']));
         }
-
+ 
         else {
             return abort(404, 'NOT FOUND');
         }
