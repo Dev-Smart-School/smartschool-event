@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/{type}/{id}', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/competition/{type}/{id}', [CompetitionController::class, 'index'])->name('competition');
+Route::get('/', [DashboardController::class, 'index'])->name('home');
+Route::get('auth/{type}/{id}', [DashboardController::class, 'logged'])->name('check-logged');
+Route::get('/competition', [CompetitionController::class, 'index'])->name('competition');
 Route::post('/competition', [CompetitionController::class, 'store'])->name('competition.store');

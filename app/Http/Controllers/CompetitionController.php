@@ -17,21 +17,22 @@ class CompetitionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($type, $id){
+    public function index(){
         $category = CategoryCompetition::all();
-        if ($type == 'user') {
-            $typeLogin = 'user';
-            $data = User::where('id_user', $id)->first();
-            return view('pages.competition.index', compact(['category', 'data', 'typeLogin']));
-        } else if($type == 'guru') {
-            $typeLogin = 'guru';
-            $data = Guru::where('id_guru', $id)->first();
-            return view('pages.competition.index', compact(['category', 'data', 'typeLogin']));
-        } else if($type == 'siswa') {
-            $typeLogin = 'siswa';
-            $data = Siswa::where('id_siswa', $id)->first();
-            return view('pages.competition.index', compact(['category', 'data', 'typeLogin']));
-        } 
+        // if ($type == 'user') {
+        //     $typeLogin = 'user';
+        //     $data = User::where('id_user', $id)->first();
+        //     return view('pages.competition.index', compact(['category', 'data', 'typeLogin']));
+        // } else if($type == 'guru') {
+        //     $typeLogin = 'guru';
+        //     $data = Guru::where('id_guru', $id)->first();
+        //     return view('pages.competition.index', compact(['category', 'data', 'typeLogin']));
+        // } else if($type == 'siswa') {
+        //     $typeLogin = 'siswa';
+        //     $data = Siswa::where('id_siswa', $id)->first();
+        //     return view('pages.competition.index', compact(['category', 'data', 'typeLogin']));
+        // } 
+        return view('pages.competition.index', compact(['category']));
     }
 
     /**

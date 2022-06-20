@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
 Template Name: Metronic - Bootstrap 4 HTML, React, Angular 9 & VueJS Admin Dashboard Theme
@@ -145,18 +144,18 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="topbar-item">
 									<div class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
 										<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-										@if ($typeLogin == 'user')
-											<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ $data->nama_lengkap }}</span>
+										@if ($user)
+											<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ $user->nama_lengkap }}</span>
 											<span class="symbol symbol-35 symbol-light-success">
 												<span class="symbol-label font-size-h5 font-weight-bold">S</span>
 											</span>
-										@elseif ($typeLogin == 'guru')
-											<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ $data->nama_guru }}</span>
+										@elseif ($guru)
+											<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ $guru->nama_guru }}</span>
 											<span class="symbol symbol-35 symbol-light-success">
 												<span class="symbol-label font-size-h5 font-weight-bold">S</span>
 											</span>
-										@elseif ($typeLogin == 'siswa')
-											<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ $data->nama }}</span>
+										@elseif ($siswa)
+											<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ $siswa->nama }}</span>
 											<span class="symbol symbol-35 symbol-light-success">
 												<span class="symbol-label font-size-h5 font-weight-bold">S</span>
 											</span>
