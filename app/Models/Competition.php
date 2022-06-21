@@ -9,4 +9,9 @@ class Competition extends Model
 {
     use HasFactory;
     protected $fillable = ['title', 'category_competition_id','description', 'start_date', 'end_date', 'image_url', 'juknis_url', 'status'];
+
+    public function category()
+    {
+        return $this->belongsTo(CategoryCompetition::class, 'category_competition_id');
+    }
 }

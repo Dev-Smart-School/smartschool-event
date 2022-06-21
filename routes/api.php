@@ -20,9 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware' => 'auth:api'], function () {
-    Route::get('/kompetisi', [CompetitionController::class, 'index'])->name('api-competition');
-    Route::post('/kompetisi', [CompetitionController::class, 'store'])->name('api-competition-store');
+    Route::get('/kompetisi', [CompetitionController::class, 'index']);
+    Route::post('/kompetisi', [CompetitionController::class, 'store']);
     Route::prefix('submit')->group(function () {
-        Route::post('/kompetisi', [CompetitionController::class, 'submitCompetition'])->name('api-competition-submit');
+        Route::post('/kompetisi', [CompetitionController::class, 'submitCompetition']);
+        Route::get('/kompetisi/{id}', [CompetitionController::class, 'competitionParticipant']);
     });
 });

@@ -20,8 +20,9 @@ class CompetitionController extends Controller
     public function index(){
         $category = CategoryCompetition::all();
         if (session()->has('user')) {
+            $competition = Competition::with('category')->get();
             $user = User::where('id_user', session('user_id'))->first();
-            return view('pages.competition.index', compact(['category', 'user']));
+            return view('pages.competition.index', compact(['category', 'user', 'competition']));
         } else {
             abort(404, 'ANDA HARUS LOGIN DULU');
         }

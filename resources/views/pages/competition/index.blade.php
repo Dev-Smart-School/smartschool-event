@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <!--begin::Notice-->
-    <div class="alert alert-custom alert-white alert-shadow gutter-b" role="alert">
+    {{-- <div class="alert alert-custom alert-white alert-shadow gutter-b" role="alert">
         <div class="alert-icon">
             <span class="svg-icon svg-icon-primary svg-icon-xl">
                 <!--begin::Svg Icon | path:assets/media/svg/icons/Tools/Compass.svg-->
@@ -17,20 +17,21 @@
                 <!--end::Svg Icon-->
             </span>
         </div>
-        <div class="alert-text">The Metronic KTDatatable supports vertical scrolling with fixed height.local or remote data source. For the local data you can pass javascript array as data source. In this example the grid fetches its data from a javascript array data source. For more information visit
-        <a class="font-weight-bold" href="https://keenthemes.com/metronic/?page=docs&amp;section=html/components/datatable" target="_blank">Metronic KTDatatable Documentation</a>.</div>
-    </div>
+        <div class="alert-text">DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, and will add advanced interaction controls to any HTML table.
+        <br />For more info see
+        <a class="font-weight-bold" href="https://datatables.net/" target="_blank">the official home</a>of the plugin.</div>
+    </div> --}}
     <!--end::Notice-->
     <!--begin::Card-->
     <div class="card card-custom gutter-b">
         <div class="card-header flex-wrap py-3">
             <div class="card-title">
-                <h3 class="card-label">Basic Demo
+                <h3 class="card-label">Data Kompetisi
                 <span class="d-block text-muted pt-2 font-size-sm">sorting &amp; pagination remote datasource</span></h3>
             </div>
             <div class="card-toolbar">
                 <!--begin::Dropdown-->
-                <div class="dropdown dropdown-inline mr-2">
+                {{-- <div class="dropdown dropdown-inline mr-2">
                     <button type="button" class="btn btn-light-primary font-weight-bolder dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="svg-icon svg-icon-md">
                         <!--begin::Svg Icon | path:assets/media/svg/icons/Design/PenAndRuller.svg-->
@@ -92,70 +93,70 @@
                         <!--end::Navigation-->
                     </div>
                     <!--end::Dropdown Menu-->
-                </div>
+                </div> --}}
                 <!--end::Dropdown-->
                 <!--begin::Button-->
-                <a href="#" class="btn btn-primary font-weight-bolder">
-                <span class="svg-icon svg-icon-md">
-                    <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <rect x="0" y="0" width="24" height="24" />
-                            <circle fill="#000000" cx="9" cy="15" r="6" />
-                            <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
-                        </g>
-                    </svg>
-                    <!--end::Svg Icon-->
-                </span>New Record</a>
-                <!--end::Button-->
+                <button type="button" class="btn btn-primary font-weight-bolder" data-toggle="modal" data-target="#exampleModal">
+                    <span class="svg-icon svg-icon-md">
+                        <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24" />
+                                <circle fill="#000000" cx="9" cy="15" r="6" />
+                                <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
+                            </g>
+                        </svg>
+                        <!--end::Svg Icon-->
+                    </span>Tambah Kompetisi
+                </a>
             </div>
         </div>
         <div class="card-body">
             <!--begin: Datatable-->
-            <table class="table table-bordered table-checkable" id="">
+            <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
                 <thead>
                     <tr>
-                        <th>Record ID</th>
-                        <th>Order ID</th>
-                        <th>Country</th>
-                        <th>Ship City</th>
-                        <th>Ship Address</th>
-                        <th>Company Agent</th>
-                        <th>Company Name</th>
-                        <th>Ship Date</th>
+                        <th>No</th>
+                        <th>Kategori</th>
+                        <th>Judul Kompetisi</th>
+                        <th>Deskripsi</th>
+                        <th>Tanggal Mulai</th>
+                        <th>Tanggal Selesai</th>
                         <th>Status</th>
-                        <th>Type</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>64616-103</td>
-                        <td>Brazil</td>
-                        <td>São Félix do Xingu</td>
-                        <td>698 Oriole Pass</td>
-                        <td>Hayes Boule</td>
-                        <td>Casper-Kerluke</td>
-                        <td>10/15/2017</td>
-                        <td>5</td>
-                        <td>1</td>
-                        <td nowrap="nowrap"></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>54868-3377</td>
-                        <td>Vietnam</td>
-                        <td>Bình Minh</td>
-                        <td>8998 Delaware Court</td>
-                        <td>Humbert Bresnen</td>
-                        <td>Hodkiewicz and Sons</td>
-                        <td>4/24/2016</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td nowrap="nowrap"></td>
-                    </tr>
-                    
+                    @foreach ($competition as $item)
+                        <tr>
+                            <td>2</td>
+                            <td>{{ $item->category->name }}</td>
+                            <td>{{ $item->title }}</td>
+                            <td>{{ $item->description }}</td>
+                            <td>{{ $item->start_date}}</td>
+                            <td>{{ $item->end_date}}</td>
+                            <td>
+                                @if ($item->status == 1)
+                                    <span class="badge badge-success">Active</span>
+                                @elseif($item->status == 2)
+                                    <span class="badge badge-danger">Inactive</span>
+                                @elseif($item->status == 3)
+                                    <span class="badge badge-warning">Pending</span>
+                                @endif
+                            </td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="View">
+                                    <i class="la la-eye"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="Edit">
+                                    <i class="la la-edit"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="Delete">
+                                    <i class="la la-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
             <!--end: Datatable-->

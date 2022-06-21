@@ -27,7 +27,7 @@ class CompetitionController extends Controller
 
         if (request()->hasFile('image')) {
             $image = request()->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $imageName = time() . "_" . $image->getClientOriginalName();
             $image->move(public_path('images/competition'), $imageName);
             $data->image = $imageName;
             $data->save();
@@ -37,6 +37,17 @@ class CompetitionController extends Controller
             return ResponseFormatter::success($data, 'berhasil submit kompetisi');
         } else {
             return ResponseFormatter::error('Gagal submit kompetisi');
+        }
+    }
+
+    public function competitionParticipant($id)
+    {
+        $data = CompetitionParticipant::where('competition_id', $id)->get();
+
+        if ($data) {
+            return ResponseFormatter::success($data, 'berhasil ambil data kompetisi');
+        } else {
+            return ResponseFormatter::error('Gagal ambil data kompetisi');
         }
     }
 }
