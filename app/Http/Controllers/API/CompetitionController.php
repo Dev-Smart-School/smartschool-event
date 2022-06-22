@@ -12,7 +12,7 @@ class CompetitionController extends Controller
 {
     public function index()
     {
-        $data = Competition::all();
+        $data = Competition::with('category')->get();
 
         if ($data) {
             return ResponseFormatter::success($data, 'berhasil ambil data kompetisi');
