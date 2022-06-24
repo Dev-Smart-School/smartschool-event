@@ -15,19 +15,21 @@ class DashboardController extends Controller
 
     public function index(){
         // dd(session()->all());
-        if(session()->has('user')){
-            $user = User::where('id_user', session('user_id'))->first();
-            // dd($user);
-            return view('pages.dashboard', compact(['user']));
-        } elseif (session()->has('guru')) {
-            $guru = Guru::where('id_guru', session('id_guru'))->first();
-            return view('pages.dashboard', compact(['guru']));
-        } elseif (session()->has('siswa')) {
-            $siswa = Siswa::where('id_siswa', session('id_siswa'))->first();
-            return view('pages.dashboard', compact(['siswa']));
-        } else {
-            abort(404, 'ANDA HARUS LOGIN DULU');
-        }
+        // if(session()->has('user')){
+        //     $user = User::where('id_user', session('user_id'))->first();
+        //     // dd($user);
+        //     return view('pages.dashboard', compact(['user']));
+        // } elseif (session()->has('guru')) {
+        //     $guru = Guru::where('id_guru', session('id_guru'))->first();
+        //     return view('pages.dashboard', compact(['guru']));
+        // } elseif (session()->has('siswa')) {
+        //     $siswa = Siswa::where('id_siswa', session('id_siswa'))->first();
+        //     return view('pages.dashboard', compact(['siswa']));
+        // } else {
+        //     abort(404, 'ANDA HARUS LOGIN DULU');
+        // }
+
+        return view('pages.dashboard');
 
     }
 

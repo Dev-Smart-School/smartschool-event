@@ -19,13 +19,15 @@ class CompetitionController extends Controller
      */
     public function index(){
         $category = CategoryCompetition::all();
-        if (session()->has('user')) {
-            $competition = Competition::with('category')->get();
-            $user = User::where('id_user', session('user_id'))->first();
-            return view('pages.competition.index', compact(['category', 'user', 'competition']));
-        } else {
-            abort(404, 'ANDA HARUS LOGIN DULU');
-        }
+        $competition = Competition::with('category')->get();
+        // if (session()->has('user')) {
+        //     $competition = Competition::with('category')->get();
+        //     $user = User::where('id_user', session('user_id'))->first();
+        //     return view('pages.competition.index', compact(['category', 'user', 'competition']));
+        // } else {
+        //     abort(404, 'ANDA HARUS LOGIN DULU');
+        // }
+        return view('pages.competition.index', compact(['category', 'competition']));
     }
 
     /**
@@ -55,6 +57,16 @@ class CompetitionController extends Controller
             'daterange' => 'required',
         ]);
 
+        // has file
+        if ($request->hasFile('image_url')) {
+            $file = $request->file('image_url');
+            $fileName = $file->getClientOriginalName();
+            $destinationPath = public_path() . '/images/competition/';
+            $file->move($destinationPath, $fileName);
+        } else {
+            $request['image_url'] = null;
+        }
+
         $start_date = substr($request['daterange'],0,-13);
         $end_date = substr($request['daterange'],13);
         $dateTime1 = new DateTime($start_date);
@@ -64,7 +76,7 @@ class CompetitionController extends Controller
             'title' => $request['title'],
             'description' => $request['description'],
             'category_competition_id' => $request['category_competition_id'],
-            'image_url' => $request['image_url'],
+            'image_url' => $fileName,
             'start_date' => $dateTime1,
             'end_date' => $dateTime2,
             'status' => 0,

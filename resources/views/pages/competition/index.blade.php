@@ -120,6 +120,7 @@
                         <th>Kategori</th>
                         <th>Judul Kompetisi</th>
                         <th>Deskripsi</th>
+                        <th>Gambar</th>
                         <th>Tanggal Mulai</th>
                         <th>Tanggal Selesai</th>
                         <th>Status</th>
@@ -133,6 +134,9 @@
                             <td>{{ $item->category->name }}</td>
                             <td>{{ $item->title }}</td>
                             <td>{{ $item->description }}</td>
+                            <td>
+                                <a href="{{$item->image_url}}">lihat gambar</a>
+                            </td>
                             <td>{{ $item->start_date}}</td>
                             <td>{{ $item->end_date}}</td>
                             <td>
