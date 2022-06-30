@@ -17,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('auth/{type}/{id}', [AuthUserController::class, 'logged'])->name('check-logged');
+Route::get('auth/{type}/{token}/{id}', [AuthUserController::class, 'logged'])->name('check-logged');
 Route::get('/competition', [CompetitionController::class, 'index'])->name('competition');
 Route::post('/competition', [CompetitionController::class, 'store'])->name('competition.store');
