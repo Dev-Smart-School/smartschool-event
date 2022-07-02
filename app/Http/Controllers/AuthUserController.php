@@ -32,6 +32,15 @@ class AuthUserController extends Controller
                 } else {
                     abort(404, 'ANDA TIDAK BISA LOGIN');
                 }
+            } else if ($type == 'admin' && $token == $login_record->token) {
+                $admin = User::where('id_user', $id)->first();
+                if ($admin) {
+                    session()->put('admin', $admin);
+                    session()->put('user_type', 'admin');
+                    return redirect()->route('dashboard');
+                } else {
+                    abort(404, 'ANDA TIDAK BISA LOGIN');
+                }
             } else {
                 abort(404, 'ANDA TIDAK BISA LOGIN');
             }
