@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\CompetitionController;
+use App\Http\Controllers\API\PodcastController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,8 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::post('/kompetisi', [CompetitionController::class, 'submitCompetition']);
         Route::get('/kompetisi/{id}', [CompetitionController::class, 'competitionParticipant']);
     });
+
+    // podcast
+    Route::get('/podcast', [PodcastController::class, 'index']);
+    Route::post('/podcast', [PodcastController::class, 'store']);
 });
