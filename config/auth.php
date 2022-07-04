@@ -42,7 +42,7 @@ return [
         ],
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'admins',
             'hash' => true,
         ],
     ],
@@ -70,7 +70,7 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        'users' => [
+        'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\AdminUser::class,
         ],
