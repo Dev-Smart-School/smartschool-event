@@ -22,8 +22,8 @@ class DashboardController extends Controller
         } else if(session('siswa')) {
             return view('pages.dashboard');
         } else {
-            // abort(403, 'ANDA HARUS LOGIN DULU');
-            return view('pages.dashboard');
+            abort(403, 'ANDA HARUS LOGIN DULU');
+            // return view('pages.dashboard');
         }
 
     }
